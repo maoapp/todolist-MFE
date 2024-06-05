@@ -16,8 +16,9 @@ const Form: React.FC<IFormProps> = ({ addTodo }) => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} data-testid="form">
       <input
+        data-testid="form-input"
         type="text"
         value={description}
         onChange={(e) => setDescription(e.target.value)}

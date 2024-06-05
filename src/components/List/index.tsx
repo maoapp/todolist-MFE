@@ -9,8 +9,8 @@ interface IListProps {
 const List: React.FC<IListProps> = ({ data, toggleTodo }) => {
   return (
     <ul>
-      {data.map(task => (
-        <Card key={task.id} task={task} toggleTodo={toggleTodo} />
+      {data.map((task, index) => (
+        <Card key={task.id} task={task} toggleTodo={toggleTodo} index={index} />
       ))}
     </ul>
   );

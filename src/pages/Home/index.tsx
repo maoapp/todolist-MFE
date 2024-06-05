@@ -1,6 +1,5 @@
 import React from 'react';
 import { v4 as uuidv4 } from 'uuid';
-import { toast } from 'react-toastify';
 
 import List from '../../components/List';
 import Form from '../../components/Form';
@@ -38,7 +37,7 @@ const Home: React.FC = () => {
     <div>
       <h1>Todo List</h1>
       <Form addTodo={addTask} />
-      <List data={tasks} toggleTodo={toggleTodo} />
+      <List data-testid="list" data={tasks} toggleTodo={toggleTodo} />
     </div>
   );
 };
