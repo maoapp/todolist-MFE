@@ -28,6 +28,6 @@ A React Micro Frontend (MFE) Todo List Application written in TypeScript.
 
 ## Missing work
 
-- Config remote frontend and integrate it
+- Config remote microfrontend and integrate it
 - Add filters
 - Add styling
