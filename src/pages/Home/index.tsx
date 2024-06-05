@@ -1,37 +1,44 @@
-import React, { useState } from 'react';
+import React from 'react';
+import { v4 as uuidv4 } from 'uuid';
+import { toast } from 'react-toastify';
+
 import List from '../../components/List';
 import Form from '../../components/Form';
+import { useLocalStorage } from '../../hooks/useLocalStorage';
 
-interface Todo {
-  id: number;
+interface IHomeProps {
+  id: string;
   description: string;
   completed: boolean;
 }
 
 const Home: React.FC = () => {
-  const [todos, setTodos] = useState<Todo[]>([]);
+  const [tasks, setTasks] = useLocalStorage<IHomeProps[]>({
+    key: 'todos',
+    initialValue: [],
+  });
 
-  const addTodo = (description: string) => {
+  const addTask = (description: string) => {
     const newTodo = {
-      id: todos.length + 1,
+      id: uuidv4(),
       description,
       completed: false,
     };
-    setTodos([...todos, newTodo]);
+    setTasks([...tasks, newTodo]);
   };
 
-  const toggleTodo = (id: number) => {
-    const updatedTodos = todos.map(todo =>
-      todo.id === id ? { ...todo, completed: !todo.completed } : todo
+  const toggleTodo = (id: string) => {
+    const updatedTodos = tasks.map(task =>
+      task.id === id ? { ...task, completed: !task.completed } : task
     );
-    setTodos(updatedTodos);
+    setTasks(updatedTodos);
   };
 
   return (
     <div>
       <h1>Todo List</h1>
-      <Form addTodo={addTodo} />
-      <List todos={todos} toggleTodo={toggleTodo} />
+      <Form addTodo={addTask} />
+      <List data={tasks} toggleTodo={toggleTodo} />
     </div>
   );
 };
