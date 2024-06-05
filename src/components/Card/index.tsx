@@ -1,20 +1,20 @@
 import React from 'react';
 
 interface ICardProps {
-  todo: { id: number; description: string; completed: boolean };
-  toggleTodo: (id: number) => void;
+  task: { id: string; description: string; completed: boolean };
+  toggleTodo: (id: string) => void;
 }
 
-const Card: React.FC<ICardProps> = ({ todo, toggleTodo }) => {
+const Card: React.FC<ICardProps> = ({ task, toggleTodo }) => {
   return (
     <li>
       <input
         type="checkbox"
-        checked={todo.completed}
-        onChange={() => toggleTodo(todo.id)}
+        checked={task.completed}
+        onChange={() => toggleTodo(task.id)}
       />
-      <span style={{ textDecoration: todo.completed ? 'line-through' : 'none' }}>
-        {todo.description}
+      <span style={{ textDecoration: task.completed ? 'line-through' : 'none' }}>
+        {task.description}
       </span>
     </li>
   );
