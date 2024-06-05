@@ -43,7 +43,6 @@
     ]
   },
   "devDependencies": {
-    "@types/uuid": "^9.0.8",
-    "@testing-library/react-hooks": "^8.0.1"
+    "@types/uuid": "^9.0.8"
   }
 }
