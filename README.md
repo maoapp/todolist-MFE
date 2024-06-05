@@ -5,8 +5,11 @@ A React Micro Frontend (MFE) Todo List Application written in TypeScript.
 ## Features
 
 - [Add new todo tasks and Mark tasks as completed/incomplete](https://github.com/maoapp/todolist-MFE/pull/2 "Add new todo tasks")
-[- Persist tasks using localStorage](https://github.com/maoapp/todolist-MFE/pull/3 "- Persist tasks using localStorage")
-[- Add unit test](https://github.com/maoapp/todolist-MFE/pull/4 "- Add unit test")
+
+  
+- [- Persist tasks using localStorage](https://github.com/maoapp/todolist-MFE/pull/3 "- Persist tasks using localStorage")
+
+- [- Add unit test](https://github.com/maoapp/todolist-MFE/pull/4 "- Add unit test")
 - Implement MFE (Partial) :(
 
 ## Setup
